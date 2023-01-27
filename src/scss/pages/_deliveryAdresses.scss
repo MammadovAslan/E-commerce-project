@@ -1,0 +1,17 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.delivery-adress {
+  ul {
+    margin: 0;
+    li {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &:not(:last-child) {
+    padding-bottom: 32px;
+    border-bottom: 1px solid $grayPrimary;
+    margin-bottom: 32px;
+  }
+}

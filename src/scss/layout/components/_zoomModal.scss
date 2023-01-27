@@ -1,0 +1,30 @@
+@import "../../utils/mixins";
+@import "../../utils/variables";
+
+.zoom-modal {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(17, 17, 17, 0.74);
+  @include flexCenter(row);
+  .modal-container {
+    background-color: $mainWhite;
+    border-radius: 8px;
+    @include flexCenter(row);
+    align-items: stretch;
+    height: 600px;
+
+    .switch-button {
+      flex: 1;
+      height: 100%;
+      width: 50px;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 46px;
+    }
+  }
+}
