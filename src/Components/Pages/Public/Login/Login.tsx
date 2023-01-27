@@ -21,7 +21,7 @@ const Login = () => {
     try {
       const data = await axiosInstance.post(`/email-token`, {
         email,
-        base_url: "http://localhost:3000/token",
+        base_url: "https://mammadovaslan.github.io/E-commerce-project/token",
       });
     } catch (error) {
       console.log(error);
