@@ -1,0 +1,167 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.login,
+.signup {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 96px 140px 178px 200px;
+  min-height: calc(100vh - 141px - 430px);
+
+  @include for-tablet-landscape {
+    padding: 72px 30px 90px;
+    justify-content: center;
+  }
+  .login-form,
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    width: 312px;
+    .login-title {
+      text-align: center;
+    }
+    span {
+      align-self: center;
+      color: #bdbdbd;
+    }
+
+    .login-socials {
+      display: flex;
+      justify-content: space-around;
+      .login-facebook,
+      .login-google {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        p {
+          padding: 0;
+          margin: 0;
+          font-size: 12px;
+        }
+        .social-icon {
+          @include flexCenter(row);
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          svg {
+            color: $mainWhite;
+          }
+        }
+        .facebook-icon {
+          background-color: #4267b2;
+        }
+        .google-icon {
+          background-color: #db4437;
+        }
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      input {
+        width: 100%;
+        background-color: $secondaryWhite;
+        border: none;
+        outline: none;
+        padding: 14px 16px;
+        border-radius: 8px;
+      }
+      label {
+        &:not(last-child) {
+          margin-bottom: 24px;
+        }
+        .react-tel-input {
+          .special-label {
+            display: none;
+          }
+        }
+      }
+      .password {
+        position: relative;
+        .toggle-password {
+          cursor: pointer;
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          svg {
+            fill-opacity: 0.5;
+          }
+        }
+      }
+      .forgot-password-link {
+        margin-bottom: 48px;
+        align-self: flex-end;
+        margin-top: 8px;
+      }
+      .agreement-checkbox-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        input {
+          display: none;
+          &:checked ~ label {
+            background-color: $mainGreen;
+            &:before,
+            &:after {
+              content: "";
+              position: absolute;
+              height: 3px;
+              background-color: $mainWhite;
+              top: 45%;
+              border-radius: 4px;
+            }
+            &:before {
+              width: 7px;
+              left: 20%;
+              top: 51%;
+              transform: rotate(45deg);
+            }
+            &:after {
+              width: 12px;
+              right: 15%;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+        label {
+          width: 24px;
+          height: 24px;
+          margin: 0 8px 0 0;
+          border: 1px solid $grayPrimary;
+          border-radius: 8px;
+          position: relative;
+          cursor: pointer;
+        }
+        .error-message {
+          bottom: -40px;
+        }
+      }
+      .error-message {
+        color: $danger;
+        position: absolute;
+        font-size: 12px;
+      }
+      .login-button {
+        margin-top: 44px;
+      }
+    }
+  }
+  .login-image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    @include for-tablet-landscape {
+      display: none;
+    }
+    .image-grid {
+      position: absolute;
+      right: -70px;
+      z-index: -1;
+    }
+  }
+}

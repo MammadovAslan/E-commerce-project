@@ -1,0 +1,18 @@
+@import "../../utils/mixins";
+@import "../../utils/variables";
+
+.breadcrumb {
+  margin: 25px 75px 40px !important;
+  display: flex;
+
+  @include for-tablet-landscape {
+    display: none !important;
+  }
+
+  .breandcrumb-link {
+    color: $mainBlack;
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+}
