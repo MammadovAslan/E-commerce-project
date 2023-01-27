@@ -43,7 +43,7 @@ body {
   text-align: center;
   border: 1px solid $mainGreen;
   background-color: $mainGreen;
-  color: $mainWhite;
+  color: $mainWhite ;
   border-radius: 8px;
   @include easeTransition(0.2s);
   &:hover {

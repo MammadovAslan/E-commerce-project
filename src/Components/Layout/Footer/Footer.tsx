@@ -13,16 +13,16 @@ const Footer = () => {
             <h3 className="company-name">Tello</h3>
           </div>
           <div className="socials">
-            <a href="instagram.com" target='_blank'>
+            <a href="#">
               <FontAwesomeIcon icon={["fab", "instagram"]} />
             </a>
-            <a href="facebook.com" target='_blank'>
+            <a href="#">
               <FontAwesomeIcon icon={["fab", "facebook-f"]} />
             </a>
-            <a href="youtube.com" target='_blank'>
+            <a href="#">
               <FontAwesomeIcon icon={["fab", "youtube"]} />
             </a>
-            <a href="twitter.com" target='_blank'>
+            <a href="#">
               <FontAwesomeIcon icon={["fab", "twitter"]} />
             </a>
           </div>

@@ -19,7 +19,7 @@ const ProductItem = (props: Product) => {
   return (
       <div className="product" onClick={onclickHandler}>
         <div className="image">
-          <img src={props.img} alt="product" />
+          <img src={props.img} alt="product image" />
         </div>
         <div className="product-info">
           <h4 className="product-name">{props.name}</h4>

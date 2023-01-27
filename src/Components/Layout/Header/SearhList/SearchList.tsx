@@ -16,6 +16,8 @@ interface SearchProps {
 }
 
 const SearchList = (props: SearchProps) => {
+  const [searchParams] = useSearchParams();
+
   const [searchResult, setSearchResult] = useState<[]>([]);
   const sizeState = useContext<any>(WindowSizeContext);
   const [loading, setLoading] = useState(false);
