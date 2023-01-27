@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategoriesAction } from "../../../../redux/action/categories";
 import { RootState } from "../../../../redux/store/store";
-import { setCategories } from "../../../../redux/reducer/categoriesReducer";
 
 const Navbar = () => {
   const navigate = useNavigate();

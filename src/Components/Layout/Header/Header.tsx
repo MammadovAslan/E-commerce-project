@@ -48,7 +48,7 @@ const Header = () => {
   useEffect(() => {
     document.body.style.overflow =
       (searchOpen || filters) && sizeState.innerWidth < 988 ? "hidden" : "unset";
-  }, [searchOpen, filters]);
+  }, [searchOpen, filters,sizeState.innerWidth]);
 
   //*-----------------Hide navbar and search input-----------------------
   

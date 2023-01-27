@@ -12,18 +12,18 @@ interface CustomerI {
   updated: number;
 }
 
-interface initialStateI{
-  customer:CustomerI;
-  customerId:string
-  token:string|undefined
-  auth?:boolean | string
+interface initialStateI {
+  customer: CustomerI;
+  customerId: string;
+  token: string | undefined;
+  auth?: boolean | string;
 }
 
-const initialState:initialStateI = {
-  customer: <CustomerI>{},
-  customerId:localStorage.getItem('customerId') || '',
+const initialState: initialStateI = {
+  customer: {} as CustomerI,
+  customerId: localStorage.getItem("customerId") || "",
   token: localStorage.getItem("token") || "",
-  auth:!!localStorage.getItem("token")
+  auth: !!localStorage.getItem("token"),
 };
 
 const authSlice = createSlice({
@@ -42,12 +42,12 @@ const authSlice = createSlice({
       state.token = payload;
       return state;
     },
-    setCustomerId : (state,{payload})=>{
-      state.customerId = payload
-      return state
-    }
+    setCustomerId: (state, { payload }) => {
+      state.customerId = payload;
+      return state;
+    },
   },
 });
 
 export const authReducer = authSlice.reducer;
-export const { setAuth, setCustomer, setToken,setCustomerId } = authSlice.actions;
+export const { setAuth, setCustomer, setToken, setCustomerId } = authSlice.actions;

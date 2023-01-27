@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import SummaryItem from "./SummaryItem/SummaryItem";
 import { refreshCartAction } from "../../../../../redux/action/cart";
-import { Elements, CardElement, ElementsConsumer, PaymentElement } from "@stripe/react-stripe-js";
+import { Elements, CardElement, ElementsConsumer } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import { loadingSpinner } from "../../../../Utils/Loading/Loading";
