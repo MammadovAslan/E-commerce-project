@@ -69,7 +69,7 @@ const ProductsList = (props: ProductsListProps) => {
             ))}
       </ul>
       <div className="show-all-mobile-link">
-        <Link to="">
+        <Link to={`products${props.link}`}>
           Hamısına bax <ChevronRightTwoTone />
         </Link>
       </div>
