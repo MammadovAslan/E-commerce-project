@@ -252,6 +252,14 @@ body {
   align-items: center;
   align-items: stretch;
   height: 600px;
+  width: 80%;
+}
+@media (max-width: 988px) {
+  .zoom-modal .modal-container .modal-window-image {
+    height: 60%;
+    width: 80%;
+    align-self: center;
+  }
 }
 .zoom-modal .modal-container .switch-button {
   flex: 1;
@@ -1030,7 +1038,7 @@ body {
   align-items: center;
   gap: 16px;
   overflow-x: scroll;
-  padding: 4px 0;
+  padding: 4px;
 }
 @media (max-width: 988px) {
   .product-details .details-main .details-images .all-images {

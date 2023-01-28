@@ -16,6 +16,14 @@
     @include flexCenter(row);
     align-items: stretch;
     height: 600px;
+    width: 80%;
+    .modal-window-image {
+      @include for-tablet-landscape {
+        height: 60%;
+        width: 80%;
+        align-self: center;
+      }
+    }
 
     .switch-button {
       flex: 1;

@@ -1,5 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
-
+import { motion } from "framer-motion";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 interface ZoomModalProps {
   image: string;
   toggleModal: boolean;
@@ -28,7 +29,7 @@ const ZoomModal = (props: ZoomModalProps) => {
       <div className="modal-container">
         <button className="switch-button privious-image-button" onClick={props.showPrevImage}>
           {" "}
-          &lt;{" "}
+          <ArrowBackIosNewRoundedIcon />{" "}
         </button>
         <motion.img
           variants={variants}
@@ -41,7 +42,7 @@ const ZoomModal = (props: ZoomModalProps) => {
         />
         <button className="switch-button next-image-button" onClick={props.showNextImage}>
           {" "}
-          &gt;{" "}
+          <ArrowForwardIosRoundedIcon />{" "}
         </button>
       </div>
     </div>
