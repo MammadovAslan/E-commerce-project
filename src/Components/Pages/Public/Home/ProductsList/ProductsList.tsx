@@ -27,9 +27,9 @@ const ProductsList = (props: ProductsListProps) => {
     try {
       const params = {
         limit: props.limit,
-        sortBy: props.sortOption,
-        category_slug: props.category,
-        sortDirection: props.order,
+        // sortBy: props.sortOption,
+        // category_slug: props.category,
+        // sortDirection: props.order,
       };
 
       const resp = await commerce.products.list(params);
