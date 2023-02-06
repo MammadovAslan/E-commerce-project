@@ -1,6 +1,6 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm,SubmitHandler  } from "react-hook-form";
 import SocialsLogin from "../Login/SocialsLogin/SocialsLogin";
 import { axiosInstance } from "../../../../api/axios";
 import { useSelector } from "react-redux";
@@ -28,7 +28,15 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  const signUpCustomer = async (obj: any) => {
+  interface ObjectI{
+    firstname:string
+    lastname:string
+    email:string
+    phone:string;
+    password:string
+  }
+
+  const signUpCustomer = async (obj: ObjectI) => {
     try {
       const data = await axiosInstance.post("", obj);
       //*Redirect to login after users sign up
@@ -43,7 +51,7 @@ const SignUp = () => {
     }
   };
 
-  const submitHandler = (data: any) => {
+  const submitHandler:SubmitHandler<any> = (data) => {
     const { fullname, password, email, phone } = data;
 
     signUpCustomer({
