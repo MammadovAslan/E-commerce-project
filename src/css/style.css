@@ -117,6 +117,7 @@ body {
   fill: #2dd06e;
 }
 .list-item .add-to-cart-button svg {
+  width: 100% !important;
   font-size: 18px;
   fill: #fff;
 }
@@ -511,6 +512,18 @@ body {
   margin: 0;
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+.home .home-content .products-list .list svg {
+  flex-shrink: 0;
+  width: 20%;
+}
+@media (max-width: 568px) {
+  .home .home-content .products-list .list svg:first-child, .home .home-content .products-list .list svg:last-child {
+    width: 100%;
+  }
+  .home .home-content .products-list .list svg:not(:first-child) {
+    display: none;
+  }
 }
 .home .home-content .products-list .list::-webkit-scrollbar {
   display: none;

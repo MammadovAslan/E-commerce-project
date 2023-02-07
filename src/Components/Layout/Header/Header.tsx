@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { debounce } from "lodash";
 import { Link } from "react-router-dom";
+import HeaderLoading from "./HeaderLoading/HeaderLoading";
 
 //*-----Redux/context------
 import { RootState } from "../../../redux/store/store";
@@ -8,10 +9,7 @@ import { WindowSizeContext } from "../../Context/WidthContext";
 import { useSelector } from "react-redux";
 
 //*-----MUI icons------
-import {
-  ShoppingCartOutlined,
-  PersonOutlineOutlined,
-} from "@mui/icons-material";
+import { ShoppingCartOutlined, PersonOutlineOutlined } from "@mui/icons-material";
 
 //*-----Components------
 import Navbar from "./Navbar/Navbar";
@@ -51,7 +49,7 @@ const Header = () => {
   }, [searchOpen, filters]);
 
   //*-----------------Hide navbar and search input-----------------------
-  
+
   const onclickHandler = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.target as Element;
 
@@ -188,7 +186,7 @@ const Header = () => {
           </div>
         )}
         <nav className="navbar">
-          {categories.loading && loadingSpinner}
+          {categories.loading && <HeaderLoading />}
           {/* Navbar desctop */}
           <Navbar />
         </nav>

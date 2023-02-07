@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import ListItem from "./ListItem/ListItem";
 import { Link } from "react-router-dom";
 import { ChevronRightTwoTone } from "@mui/icons-material";
-import { loadingSpinner } from "../../../../Utils/Loading/Loading";
+import LoadingHolder from "./LoadingHolder/LoadingHolder";
+import uuid from "react-uuid";
 import Commerce from "@chec/commerce.js";
 const commerce = new Commerce("pk_493453d76f26aadbc08099247c3aac974fd51e19ca6c3");
 
@@ -25,6 +26,12 @@ const ProductsList = (props: ProductsListProps) => {
   const getProducts = async () => {
     setLoading(true);
     try {
+      const arr = [];
+      for (let i = 0; i < props.limit; i++) {
+        arr.push(i);
+      }
+      setProducts(arr);
+
       const params = {
         limit: props.limit,
         sortBy: props.sortOption,
@@ -55,10 +62,11 @@ const ProductsList = (props: ProductsListProps) => {
       </div>
       <ul className="list">
         {error && <h3 style={{ color: "red" }}>Network Error</h3>}
-        {loading
-          ? loadingSpinner
-          : products &&
-            products?.map((el: any) => (
+        {products &&
+          products?.map((el: any) =>
+            loading ? (
+              <LoadingHolder key={uuid()} />
+            ) : (
               <ListItem
                 key={el.id}
                 image={el.image.url}
@@ -66,7 +74,8 @@ const ProductsList = (props: ProductsListProps) => {
                 price={el.price.formatted_with_symbol}
                 itemId={el.id}
               />
-            ))}
+            )
+          )}
       </ul>
       <div className="show-all-mobile-link">
         <Link to={`products${props.link}`}>

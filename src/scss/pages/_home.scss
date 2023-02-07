@@ -1,6 +1,6 @@
 @import "../utils/variables";
 @import "../utils/mixins";
-@import '../layout/components/carousel';
+@import "../layout/components/carousel";
 
 .home {
   .home-content {
@@ -35,6 +35,19 @@
         margin: 0;
         -ms-overflow-style: none;
         scrollbar-width: none;
+        svg {
+          flex-shrink: 0;
+          width: 20%;
+          @include for-mobile-landscape {
+            &:first-child,
+            &:last-child {
+              width: 100%;
+            }
+            &:not(:first-child) {
+              display: none;
+            }
+          }
+        }
         &::-webkit-scrollbar {
           display: none;
         }
