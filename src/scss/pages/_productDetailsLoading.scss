@@ -1,0 +1,31 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.details-loading-container {
+  @include flexCenter(row);
+  //   gap: 80px;
+  margin-top: 52px;
+  @include for-tablet-landscape {
+    margin-top: 32px;
+    flex-direction: column;
+    gap: 0;
+    margin-left: 20px;
+  }
+  .info-loading,
+  .image-loading {
+    flex: 1;
+    display: flex;
+    @include for-mobile-landscape {
+      width: 100%;
+    }
+  }
+  svg {
+    flex: 1;
+  }
+  .info-loading {
+    align-self: flex-start;
+    @include for-tablet-landscape {
+      align-self: center;
+    }
+  }
+}

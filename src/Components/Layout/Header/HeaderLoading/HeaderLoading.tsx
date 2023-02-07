@@ -6,7 +6,7 @@ const HeaderLoading = () => (
     width={454}
     height={27}
     viewBox="0 0 454 27"
-    backgroundColor="#ece9e9"
+    backgroundColor="#e2e4e2"
     foregroundColor="#ecebeb"
   >
     <rect x="5" y="2" rx="3" ry="3" width="47" height="8" />

@@ -417,6 +417,44 @@ body {
     transform: translateY(0);
   }
 }
+.details-loading-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 52px;
+}
+@media (max-width: 988px) {
+  .details-loading-container {
+    margin-top: 32px;
+    flex-direction: column;
+    gap: 0;
+    margin-left: 20px;
+  }
+}
+.details-loading-container .info-loading,
+.details-loading-container .image-loading {
+  flex: 1;
+  display: flex;
+}
+@media (max-width: 568px) {
+  .details-loading-container .info-loading,
+.details-loading-container .image-loading {
+    width: 100%;
+  }
+}
+.details-loading-container svg {
+  flex: 1;
+}
+.details-loading-container .info-loading {
+  align-self: flex-start;
+}
+@media (max-width: 988px) {
+  .details-loading-container .info-loading {
+    align-self: center;
+  }
+}
+
 .home .carousel {
   width: 100%;
   height: 450px;

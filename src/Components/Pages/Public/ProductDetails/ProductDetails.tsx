@@ -15,6 +15,8 @@ import MainCharacteristicsList from "./MainCharacteristicsList/MainCharacteristi
 import AboutProductContainer from "./AboutProductContainer/AboutProductContainer";
 import ZoomModal from "./ZoomModal/ZoomModal";
 import Reviews from "./Reviews/Reviews";
+import MainImageLoader from "./DetailsLoadingHolders/MainImageLoader/MainImageLoader";
+import DetailsLoadingHolders from "./DetailsLoadingHolders/DetailsLoadingHolders";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -83,8 +85,6 @@ const ProductDetails = () => {
     }
   }, [product]);
 
-  
-
   useEffect(() => {
     images.length > 0 && setCurrentImage(images[0]);
   }, [images]);
@@ -129,6 +129,8 @@ const ProductDetails = () => {
           direction={direction}
         />
       )}
+      {loading && <DetailsLoadingHolders />}
+
       {product && Object.keys(product).length !== 0 && (
         <>
           <div className="details-main">
@@ -161,18 +163,19 @@ const ProductDetails = () => {
                 </button>
               </div>
               <div className="all-images">
-                {product && product.assets.map((el: any) => (
-                  <img
-                    key={el.id}
-                    src={el.url}
-                    className={`${
-                      el.url === currentImage ? "galery-image selected" : "galery-image"
-                    }`}
-                    onClick={() => {
-                      setCurrentImage(el.url);
-                    }}
-                  />
-                ))}
+                {product &&
+                  product.assets.map((el: any) => (
+                    <img
+                      key={el.id}
+                      src={el.url}
+                      className={`${
+                        el.url === currentImage ? "galery-image selected" : "galery-image"
+                      }`}
+                      onClick={() => {
+                        setCurrentImage(el.url);
+                      }}
+                    />
+                  ))}
               </div>
             </div>
             <div className="details-main-info">
